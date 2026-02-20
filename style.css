@@ -182,6 +182,7 @@ h6 {
     width: 100%;
     height: 40vh;
     z-index: 1;
+    background: linear-gradient(to top, rgba(0, 210, 255, 0.2), transparent);
 }
 
 .wave {
@@ -190,7 +191,7 @@ h6 {
     left: 0;
     width: 100%;
     height: 100px;
-    background: url('https://cdn.pixabay.com/photo/2016/09/26/11/04/wave-1695624_1280.png');
+    background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 100"><path d="M0,50 C150,100 350,0 500,50 C650,100 850,0 1000,50 L1000,100 L0,100 Z" fill="rgba(0, 210, 255, 0.15)"/></svg>');
     background-size: 1000px 100px;
 }
 
@@ -232,11 +233,15 @@ h6 {
     position: absolute;
     bottom: 30vh;
     width: 100%;
-    height: 200px;
-    background: url('https://i.imgur.com/vHq9rYJ.png');
+    height: 300px;
+    background: url('https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&q=80&w=1920');
     background-size: cover;
+    background-position: center bottom;
+    mask-image: linear-gradient(to top, black 50%, transparent 100%);
+    -webkit-mask-image: linear-gradient(to top, black 50%, transparent 100%);
     z-index: 0;
-    opacity: 0.8;
+    opacity: 0.4;
+    filter: brightness(0.5) contrast(1.2);
 }
 
 .hero-content h1 {

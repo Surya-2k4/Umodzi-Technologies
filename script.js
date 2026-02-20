@@ -93,9 +93,10 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .from('.nav-link', {
             y: -30,
-            opacity: 0,
+            autoAlpha: 0,
             stagger: 0.05,
-            duration: 0.5
+            duration: 0.5,
+            clearProps: "all"
         }, '-=0.3')
         .call(initHeroAnimations)
         .call(() => {
@@ -103,7 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
     function initHeroAnimations() {
-        // 3. Hero Text Animation - Robust but simple
         const splitText = document.querySelector('.reveal-type');
         if (splitText) {
             gsap.from(splitText, {
@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
             clearProps: "all"
         });
 
-        // 4. SVG Tree Growth Animation
+        // SVG Tree Growth Animation
         const paths = document.querySelectorAll('.tree-path');
         paths.forEach(path => {
             const length = path.getTotalLength();
@@ -201,7 +201,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 7. Navbar Scrolled Effect
     const nav = document.getElementById('main-nav');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 100) {
@@ -211,7 +210,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Smooth scroll for nav links & Mobile Menu Auto-Collapse
     document.querySelectorAll('.nav-links a').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();

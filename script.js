@@ -231,4 +231,29 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+
+    // 7. Contact Form WhatsApp Logic
+    const contactForm = document.getElementById('contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const name = document.getElementById('contact-name').value;
+            const email = document.getElementById('contact-email').value;
+            const message = document.getElementById('contact-message').value;
+
+            const phoneNumber = "919791862787";
+            const messageText = `Hello Umodzi Technologies!\n\n*New Inquiry*\n*Name:* ${name}\n*Email:* ${email}\n*Message:* ${message}`;
+            const encodedText = encodeURIComponent(messageText);
+
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodedText}`;
+
+            window.open(whatsappUrl, '_blank');
+
+            // Optional: reset form after delay
+            setTimeout(() => {
+                contactForm.reset();
+            }, 1000);
+        });
+    }
 });
